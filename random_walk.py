@@ -14,6 +14,7 @@ class RandomWalk():
     def fill_walk(self):
         """Calculate all the points in the walks"""
 
+
         # Keep taking steps untill the walk reaches the desired lenght
         while len(self.x_values)< self.num_points:
 
@@ -33,11 +34,11 @@ class RandomWalk():
             self.x_values.append(next_x)
             self.y_values.append(next_y)
 
-    def get_step():
-        """Return random step of random lenght and direction"""
+def get_step():
+    """Return random step of random lenght and direction"""
 
-        direction = choice([1, -1])
-        distance = choice([0, 1, 2, 3, 4])
-        step = direction * distance
+    direction = choice([1, -1])
+    distance = choice([0, 1, 2, 3, 4])
+    step = direction * distance
 
-        return step
+    return step
