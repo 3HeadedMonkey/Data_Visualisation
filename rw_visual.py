@@ -19,7 +19,7 @@ while True:
 
     # Emphasize the first and last points
     plt.scatter(0, 0, c='yellow', edgecolors='none',s=100)
-    plt.scatter(rw.x_values[-1], rw.y_values[-1], c='red', edgecolors='none',
+    plt.plot(rw.x_values[-1], rw.y_values[-1], c='red', edgecolors='none',
                 s=100)
 
     # Remove the axes
