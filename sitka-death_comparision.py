@@ -15,8 +15,10 @@ def main():
             dates_sitka, highs_sitka, lows_sitka = [], [], []
             dates_death, highs_death, lows_death = [], [], []
 
-            dates_sitka, highs_sitka, lows_sitka = time_reader(sitka_reader, 'sitka')
-            dates_death, highs_death, lows_death = time_reader(death_reader, 'death')
+            dates_sitka, highs_sitka, lows_sitka = time_reader(
+                                                    sitka_reader, 'sitka')
+            dates_death, highs_death, lows_death = time_reader(
+                                                    death_reader, 'death')
 
             sitka = (dates_sitka, highs_sitka, lows_sitka)
             death = (dates_death, highs_death, lows_death)
@@ -35,13 +37,13 @@ def time_reader(reader, header = 'unknown dataset'):
 
         except ValueError:
             print(datetime, 'NO DATA  ', header)
+            
         else:
             dates.append(current_date)
             highs.append(high)
             lows.append(low)
 
-
-            return dates, highs, lows
+    return dates, highs, lows
 
 
 def printer(sitka, death):
@@ -49,19 +51,14 @@ def printer(sitka, death):
     dates_sitka, highs_sitka, lows_sitka = sitka
     dates_death, highs_death, lows_death = death
 
-
     fig = plt.figure(dpi=128, figsize=(10,6))
     plt.plot(dates_sitka, highs_sitka, c='red', alpha = 0.4 )
-    plt.plot(dates_death, highs_death, c='black', alpha = 0.5 )
-    # plt.fill_between(dates_sitka, highs_death, highs_death,
-    #                                 facecolor='red', alpha = 0.1)
-    #
-    # plt.plot(dates_sitka, lows_sitka, c='blue', alpha = 0.4 )
-    # plt.plot(dates_death, lows_death, c='black', alpha = 0.5 )
-    # plt.fill_between(dates_sitka, lows_death, lows_death,
-    #                 facecolor='blue', alpha = 0.1)
+    plt.plot(dates_death, highs_death, c='red', alpha = 0.8 )
 
-    # plt.show()
+    plt.plot(dates_sitka, lows_sitka, c='blue', alpha = 0.4 )
+    plt.plot(dates_death, lows_death, c='blue', alpha = 0.8 )
+
+    plt.show()
 
 
 main()
