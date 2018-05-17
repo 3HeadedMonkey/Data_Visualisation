@@ -30,7 +30,7 @@ for cc, pop in cc_populations.items():
         cc_pops_3[cc] = pop
 
 # See how many countries are in each level
-print(len(cc_pops_1),len(cc_pops_2),len(cc_pops_3))
+# print(len(cc_pops_1),len(cc_pops_2),len(cc_pops_3))
 
 wm_style = RS('#336699', base_style=LCS)
 wm = World(style=wm_style)
